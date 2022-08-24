@@ -33,6 +33,7 @@ COPY ./terraform/ /usr/src/app/terraform
 COPY ./kubernetes/ /usr/src/app/kubernetes
 COPY ./helm-chart/ /usr/src/app/helm-chart
 COPY ./datadog/ /usr/src/app/datadog
+COPY ./fluxcd/ /usr/src/app/fluxcd
 VOLUME output
 CMD ["/sbin/init"]
 
