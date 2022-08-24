@@ -97,7 +97,7 @@ jobs:
         DD_APP_KEY: ((DATADOG_APP_KEY))
         DD_API_KEY: ((DATADOG_API_KEY))
 
-  - task: kubernetes  
+  - task: kubernetes + fluxcd
     image: image
     privileged: true
     config:
@@ -111,13 +111,15 @@ jobs:
         - -exc
         - |
           ls
-          cd concourse-examples/kubernetes
+          cd concourse-examples/fluxcd
           bash script.sh 
       params:
         AWS_ACCESS_KEY_ID: ((AWS_KEY))
         AWS_SECRET_ACCESS_KEY: ((AWS_SECRET))
         AWS_REGION: ((AWS_REGION))
         AWS_DEFAULT_REGION: ((AWS_DEFAULT_REGION))
+        GITHUB_USER: ((GITHUB_USER))
+        GITHUB_TOKEN: ((GITHUB_TOKEN))
         
   - task: helm-chart  
     image: image
