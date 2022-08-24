@@ -1,0 +1,11 @@
+credentials.env
+*.tfstate*
+*/.terraform
+nuke-config.yaml
+/output/*.*
+*.out
+output/*
+*.log
+*~
+fly
+*docker-compose.yml
