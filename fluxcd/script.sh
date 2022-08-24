@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+aws eks update-kubeconfig --name my-cluster
+
 flux bootstrap github \
 	--owner=$GITHUB_USER\
 	--repository=onboarding-tasks-pipeline\
