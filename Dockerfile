@@ -62,5 +62,5 @@ RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | b
 
 #### INSTALLING FLUX ##########################
 
-RUN curl -s https://fluxcd.io/install.sh | sudo bash
+RUN curl -s https://fluxcd.io/install.sh |  bash
 
