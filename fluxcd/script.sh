@@ -11,7 +11,7 @@ flux create source helm helm-chart --url https://juan-bolivar.github.io/onboardi
 	--interval 1m0s\
 	--export > helmrepo.yaml
 
-kubectl apply -f helmrepo.yaml --cluster=$(aws eks describe-cluster --name my-cluster | jq -r .cluster.arn) --generate-name
+kubectl apply -f helmrepo.yaml --cluster=$(aws eks describe-cluster --name my-cluster | jq -r .cluster.arn)
 
 flux create helmrelease helm-chart \
 	--source=HelmRepository/helm-chart
@@ -20,5 +20,4 @@ flux create helmrelease helm-chart \
 	--interval 3m0s \
 	--export > helmrelease.yaml
 
-kubectl apply -f helmrelease.yaml --cluster=$(aws eks describe-cluster --name my-cluster | jq -r .cluster.arn) --generate-name
-
+kubectl apply -f helmrelease.yaml --cluster=$(aws eks describe-cluster --name my-cluster | jq -r .cluster.arn)
