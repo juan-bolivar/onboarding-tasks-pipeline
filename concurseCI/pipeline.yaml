@@ -97,7 +97,7 @@ jobs:
         DD_APP_KEY: ((DATADOG_APP_KEY))
         DD_API_KEY: ((DATADOG_API_KEY))
 
-  - task: kubernetes&fluxcd
+  - task: kubernetes-fluxcd
     image: image
     privileged: true
     config:
