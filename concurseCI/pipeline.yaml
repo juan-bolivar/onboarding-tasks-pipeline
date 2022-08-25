@@ -121,24 +121,24 @@ jobs:
         GITHUB_USER: ((GITHUB_USER))
         GITHUB_TOKEN: ((GITHUB_TOKEN))
         
-  - task: helm-chart  
-    image: image
-    privileged: true
-    config:
-      inputs:
-      - name: output_packer
-      - name: concourse-examples
-      platform: linux
-      run:
-        path: sh
-        args:
-        - -exc
-        - |
-          ls
-          cd concourse-examples/helm-chart
-          bash script.sh
-      params:
-        AWS_ACCESS_KEY_ID: ((AWS_KEY))
-        AWS_SECRET_ACCESS_KEY: ((AWS_SECRET))
-        AWS_REGION: ((AWS_REGION))
-        AWS_DEFAULT_REGION: ((AWS_DEFAULT_REGION))
+  # - task: helm-chart  
+  #   image: image
+  #   privileged: true
+  #   config:
+  #     inputs:
+  #     - name: output_packer
+  #     - name: concourse-examples
+  #     platform: linux
+  #     run:
+  #       path: sh
+  #       args:
+  #       - -exc
+  #       - |
+  #         ls
+  #         cd concourse-examples/helm-chart
+  #         bash script.sh
+  #     params:
+  #       AWS_ACCESS_KEY_ID: ((AWS_KEY))
+  #       AWS_SECRET_ACCESS_KEY: ((AWS_SECRET))
+  #       AWS_REGION: ((AWS_REGION))
+  #       AWS_DEFAULT_REGION: ((AWS_DEFAULT_REGION))
