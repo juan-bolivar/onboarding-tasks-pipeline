@@ -8,7 +8,7 @@ cputype=$(shell sysctl -n machdep.cpu.brand_string  )
 concourse:
 	curl -O https://concourse-ci.org/docker-compose.yml
 ifeq ('$(cputype)','Apple M1 Pro') 
-	sed -i.bak 's/image: concourse\/concourse/image: rdclda\/concourse:7.8.2/' docker-compose.yml'
+	sed -i.bak 's/image: concourse\/concourse/image: rdclda\/concourse:7.8.2/' docker-compose.yml
 	#sed -i.bak  's/containerd/houdini/' docker-compose.yml
 endif
 	docker-compose up -d

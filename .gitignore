@@ -5,6 +5,7 @@ nuke-config.yaml
 /output/*.*
 *.out
 output/*
+*.bak
 *.log
 *~
 fly
